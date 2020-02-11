@@ -8,21 +8,20 @@
     padding: 0;
 }
 header{
-    background-image: url(./imgs/headerBg.png);
+    background-image: url(./imgs/headerBg2x.png);
     width: 100em;
     height: 50em;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    /* I'll be back here */
 }
 #header-logo{
-    /* background-image: url(/imgs/HeaderLogo2x.png); */
     display: inline-block;
     width: fit-content;
     height: 10em;
 }
 #header-logo img{
-    margin: 2em 0em 0em 12em;
+    margin: 2em 0em 0em 12.6em;
     width: 11em;
 }
 .top-header{
@@ -34,19 +33,18 @@ li{
 }
 a{
     text-decoration: none;
-    
 }
 /* nav a{color: #fff;} */
 nav{
     display: flex;
     align-items: center;
-    width: 58em;
+    width: 56em;
     height: 5.5em;
     
 }
 nav ul{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
 }
 /* nav ul li{
@@ -54,8 +52,8 @@ nav ul{
 } */
 .dir{
     display: flex;
-    /* align-items: center;
-    justify-content: space-around; */
+    /*align-items: center;*/
+    justify-content: space-around;
     height: 100%;
     width: 60%;
     background-color: #281923;
@@ -76,21 +74,55 @@ nav ul{
 }
 .dir .active{
     border-top: 1.5em var(--mayonnaise-color) solid;
-
 }
 .interactive{
     background-color: var(--ketchup-color);
     width: 40%;
     height: 100%;
-    padding-left: 5em;
+    padding-left: 3em;
     justify-content: start;
+}
+.interactive li{
+    padding-right: 3em;
 }
 .interactive li img{
     display: inline-flex;
-    height: 1.5em;
-    
-
+    height: 1.7em;
 }
+/* .interactive .cart{
+    position: relative;
+}
+.cart .quantity{
+    position: absolute;
+    background-color: var(--mayonnaise-color);
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    right: -0.5em;
+    top: -0.5em;
+    z-index: 100;
+} */
+
+
+.mid-header{
+    /* display: inline-block; */
+    /* width: 100%; */
+    align-content: center;
+    justify-self: center;
+}
+.main--mid-header{
+    
+    display: inline-block;
+}
+/* .bg--highlightM{
+    background-image: url(./imgs/HighlightM2x.png);
+    width: 37em;
+    height: auto;
+} */
+.order-now{
+    display: block;
+}
+
 
 
 
