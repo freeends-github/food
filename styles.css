@@ -7,12 +7,16 @@
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+}
 header{
     background-image: url(./imgs/headerBg2x.png);
-    width: 100em;
-    height: 50em;
+    width: 100vw;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     /* I'll be back here */
 }
 #header-logo{
@@ -56,8 +60,8 @@ nav ul{
     justify-content: space-around;
     height: 100%;
     width: 60%;
-    background-color: #281923;
-    opacity: 70%;
+    background-color: #393032; /*different color*/
+    opacity: 60%;
     padding: 0 2em 0 2.5em;
 }
 .dir li{
@@ -72,15 +76,18 @@ nav ul{
     color: #fff;
     /* height: 100%; */
 }
-.dir .active{
+/* .dir .active{
     border-top: 1.5em var(--mayonnaise-color) solid;
-}
+} */
 .interactive{
     background-color: var(--ketchup-color);
     width: 40%;
     height: 100%;
     padding-left: 3em;
     justify-content: start;
+}
+.dir #li-active{
+    border-top: 1.5em var(--mayonnaise-color) solid;
 }
 .interactive li{
     padding-right: 3em;
@@ -89,9 +96,11 @@ nav ul{
     display: inline-flex;
     height: 1.7em;
 }
+/* NEEEDS HOVER */
 /* .interactive .cart{
     position: relative;
 }
+NEEEDS JAVASCRIPT!!!!!
 .cart .quantity{
     position: absolute;
     background-color: var(--mayonnaise-color);
@@ -115,20 +124,47 @@ nav ul{
     margin-right: 3.5em;
 }
 .main--mid-header{
-     display: flex;
+     /* display: flex;
      justify-content: center;
      align-items: center;
-     flex-direction: column;
+     flex-direction: column; */
      width: 50% ;
      color: #fff;
 }
 .main--mid-header h1{
     font-size: 4.62em;
+    font-weight: normal;
+    margin-bottom: .5em
+}
+.main--mid-header h2{
+    position: relative;
+    width: 60%;
+    font-size: 1.6em;
+    margin-bottom: 2em;
+    /* margin-left: 3em; */
+} 
+.actions{
+    margin-left: 10.5em;
+}
+.highlighterM{
+    display: inline-block;
+    width: 40em;
+    height: auto;
+    top: 4.5em;
+    left: 6em;
+    position: absolute;
+    z-index: -1; 
+    transform: rotateX(3deg);
 }
 .span-path{
     height: 2.2em;
     width: fit-content;
 }
+.span-path:hover{
+    height: 2.25em;
+    width: fit-content;
+    cursor: pointer;
+} /* ????? */
 .span-path img{
     display: inline-block;
     height: 100%;
@@ -139,24 +175,7 @@ nav ul{
     display:flex;
     justify-content: right;
     align-items: center;
-
 }
-/*.bg--highlighterM{
-    color: #fff;
-    display: inline-block;
-    /* padding: 10px 20px; 
-    position: relative;
-}   
- .bg--highlighterM::after{
-    content: "";
-    background-image: url(./imgs/HighlightM2x.png);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: -1; 
-} */
 .order-now{
     display: flex;
     align-items: center;
@@ -167,6 +186,8 @@ nav ul{
     background-color: var(--mayonnaise-color);
     color: var(--ketchup-color);
     border-radius: 90em;
+    margin-left: 8em;
+
 }
 .order-now p{
     display: inline-block;
@@ -195,7 +216,13 @@ nav ul{
     width: 3.5em;
     height: auto;
 }
-.liner1{
+.bott-header img:hover{
+    cursor: pointer;
+    width: 3.55em;
+    height: auto;
+    
+}
+/* .liner1{
     background-image: url(./imgs/first2x.png);
     width: 100%;
     position: absolute;
@@ -205,15 +232,86 @@ nav ul{
     height: 2em;
     background-position: right;
     transform: translateY(50%);
-}
-/* .liner1 img{
-    display: inline-block;
-    width: 100%;
-    height: auto;
-    /* position: relative;
-    top: 50%;
-    transform: translateY(80%); 
 } */
+
+.liner1{
+    display: inline-block;
+    width: 105%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: -5em;
+    transform: translateY(40%); 
+}
+.want-to-eat{
+    padding-top: 2em ;
+    height: 34em;
+    background-color: #fff;
+    width: calc(100% - 26em);
+    margin: auto;
+}
+.want-to-eat h2{
+    color: var(--ketchup-color);
+    font-size: 3em;
+    font-style: normal;
+}
+
+.try-our-food{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 45%;
+}
+.try-our-food--text{
+    margin-top: 4em;
+}
+.try-our-food--text img{
+    width: 20em;
+    display: inline-block;
+    height: auto;
+}
+.try-our-food--text p{
+    color: #707070;
+    margin-top: 0.5em;
+}
+
+.our-food{
+    height: 55%;
+}
+.our-food .food-list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, calc(100% / 6));
+    grid-template-rows: 10.5em;
+}
+.our-food a{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.our-food a p{
+    text-transform: uppercase;
+    color: black;
+    font-size: 0.9em ;
+    margin-top: 1em;
+}
+/* .our-food li a{
+    text-align: center;
+} */
+.our-food a img{
+    display: inline-block;
+    height: 5.5em;
+    width: auto;
+}
+.our-food a:hover{
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px #eee ;
+}
 
 
 
