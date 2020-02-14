@@ -138,7 +138,7 @@ NEEEDS JAVASCRIPT!!!!!
 }
 .main--mid-header h2{
     position: relative;
-    width: 60%;
+    width: 50%;
     font-size: 1.6em;
     margin-bottom: 2em;
     /* margin-left: 3em; */
@@ -250,10 +250,11 @@ NEEEDS JAVASCRIPT!!!!!
     width: calc(100% - 26em);
     margin: auto;
 }
-.want-to-eat h2{
+.try-me{
     color: var(--ketchup-color);
-    font-size: 3em;
+    font-size: 2.5em;
     font-style: normal;
+    font-weight: normal;
 }
 
 .try-our-food{
@@ -264,10 +265,10 @@ NEEEDS JAVASCRIPT!!!!!
     width: 100%;
     height: 45%;
 }
-.try-our-food--text{
+/* .try-our-food--text{
     margin-top: 4em;
-}
-.try-our-food--text img{
+} */
+.brush{
     width: 20em;
     display: inline-block;
     height: auto;
@@ -312,6 +313,147 @@ NEEEDS JAVASCRIPT!!!!!
     border-radius: 5px;
     box-shadow: 0px 10px 10px #eee ;
 }
+
+.delivery--sec{
+    background-color: var(--mayonnaise-color);
+    height: 37em;
+    position: relative;
+}
+.gen-liner{
+    position: relative;
+    top: 0;
+    left: 1em;
+    transform: translateY(-50%);
+    width: 105%;
+    height: auto;
+}
+/* .delivery-guy{
+    width: 35%;
+    height: 100%;
+    display: inline-block;
+} */
+.pizza-man{
+    position: absolute;
+    bottom: 0;
+    width: 35%;
+    margin-left: 7em;
+
+}
+.delivery-info{
+    width: 60%;
+    height: 30em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+.delivery-info p{
+    width: 32%;
+    margin-left: 6em;
+    margin-top: 1em;
+
+}
+.text-highlighter{
+    position: relative;
+    width: 100%;
+    /* display: inline-block; */
+}
+.text-highlighter .highlighterK{
+    width: 100%;
+    height: auto;
+}
+.text-highlighter h2{
+    position: absolute;
+    left: 3.2em;
+    top: 2.1em;
+    width: 32%;
+    font-size: 2em;
+    text-transform: capitalize;
+    z-index: 100;
+    line-height: 1.5;
+    font-style: normal;
+}
+.liner3{
+    position: absolute;
+    bottom: 0;
+    width: 105%;
+    height: auto;
+}
+.our--popular-recipes{
+    margin: 0 12.6em;
+}
+.try-our-recipes{
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.articles-recipe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.articles{
+    width: 30.5%;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px #eee ;
+    margin-bottom: 3.3em;
+}
+.article-photo{
+    width: 100%;
+}
+.article-photo img{
+    width: 100%;
+    height: auto;
+}
+.article-description{
+    margin: 1.8rem 1.7rem
+}
+.article-description img{
+    width: 1em;
+    height: auto;
+}
+.article-description .rating{
+    display: inline-block;
+    font-weight: lighter;
+    font-size: 1em;
+}
+.article-description > p {
+    font-size: 0.9em;
+}
+.addToCart-value{
+    margin-top: 1em;
+}
+
+.addToCart-value button{
+    background-color: var(--mayonnaise-color);
+    color: #fff;
+    padding: 0.5em 2em;
+    border-radius: 90em;
+    border: none;
+}
+.addToCart-value button:hover{
+    cursor: pointer;
+}
+.addToCart-value button img{
+    width: 0.8em;
+    height: auto;
+}
+.addToCart-value button p{
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+.addToCart-value > p{
+    color: var(--ketchup-color);
+    font-size: 1.2em;
+    display: inline-block;
+
+}
+
+
 
 
 
