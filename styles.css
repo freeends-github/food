@@ -1,6 +1,7 @@
 :root{
     --ketchup-color: #A80E0E;
     --mayonnaise-color: #FFAA00;
+    --container-margin: 12.6em;
 }
 *{
     box-sizing: border-box;
@@ -25,7 +26,7 @@ header{
     height: 10em;
 }
 #header-logo img{
-    margin: 2em 0em 0em 12.6em;
+    margin: 2em 0em 0em var(--container-margin);
     width: 11em;
 }
 .top-header{
@@ -382,7 +383,7 @@ NEEEDS JAVASCRIPT!!!!!
     height: auto;
 }
 .our--popular-recipes{
-    margin: 0 12.6em;
+    margin: 0 var(--container-margin);
 }
 .try-our-recipes{
     height: 20em;
@@ -475,4 +476,97 @@ NEEEDS JAVASCRIPT!!!!!
 }
 .show-menu--div button:hover{
     cursor: pointer;
+}
+
+
+
+.happy-hours--bg{
+    background-image: url(./imgs/happyhours.png);
+    width: 100vw;
+    height: 75vh;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.happy-hours{
+    color: #fff;
+    margin-left: var(--container-margin);
+}
+.happy-hours .happy-paragraphs{
+    margin: 1em 0 1.5em 0;
+
+}
+.happy-hours h2{
+    font-size: 3em;
+    font-weight: normal;
+}
+.happy-hours p{
+    font-size: 1.2em;
+}
+.happy-hours p:last-child{
+    margin-top: 0.5em;
+}
+.liner1-2, .liner2-1{
+    width: 100%;
+    height: auto;
+}
+.liner1-2{
+    position: absolute;
+    top: 0;
+    transform: translateY(-33%);
+}
+.liner2-1{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(60%);
+}
+.happy-hours--countdown{
+    display: grid;
+    grid-template-columns: 4.1em 4.1em 4.1em 4.1em;
+    grid-template-rows: 4.1em 4.1em;
+    grid-column-gap: 2em;
+}
+.timer{
+    background-color: var(--mayonnaise-color);
+    color: #fff;
+    font-size: 2.5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer-text{
+    text-align: center;
+}
+.testimonials{
+    margin: 0 var(--container-margin);
+    padding-bottom: 8em;
+}
+.client-testimonials{
+    margin: 6em 0;
+}
+.client{
+    display: flex;
+}
+#client-photo--div{
+    width: 47%;
+    height: fit-content;
+    position: relative; 
+}
+#client-photo--div img{
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+}
+#client-photo--div div{
+    position: absolute;
+    background-color: var(--ketchup-color);
+    width: 55%;
+    height: 55%;
+    z-index: -2;
+    bottom: -3em;
+    left: -6em;
+    border-radius: .5em;
 }
