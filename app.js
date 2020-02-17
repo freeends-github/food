@@ -32,6 +32,11 @@
 //     setTimeout("changeImg()", time);
 // }
 
+mybutton = document.getElementById('bott-button');
+function goAwayButton(){
+    // document.body.scrollTop = 0; // For Safari
+    window.scrollTo(0,800) = 0; // For Chrome, Firefox, IE and Opera
+}
 
 function countdown(){
     var now = new Date();
@@ -60,6 +65,6 @@ function countdown(){
     document.getElementById("minutes").textContent = min;
     document.getElementById("seconds").textContent = s;
 
-    setTimeout(countdown, 1000);
+    setTimeout("countdown()", 1000);
 }
 countdown();
