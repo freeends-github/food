@@ -40,31 +40,26 @@ function goAwayButton(){
 
 function countdown(){
     var now = new Date();
-    var eventDate = new Date(2020, 03, 18);
+    var eventDate = new Date(2020, 02, 18);
     var currentTime = now.getTime();
     var eventTime = eventDate.getTime();
-    
     var remainingTime = eventTime - currentTime;
-
-    var s = Math.floor(remainingTime / 1000);
-    var min = Math.floor(s / 60);
-    var h = Math.floor(min / 60);
-    var d = Math.floor(h / 24);
-
+    var d = Math.floor( remainingTime / 86400000);
+    remainingTime = remainingTime % 86400000;
+    var h = Math.floor( remainingTime / 3600000);
+    remainingTime = remainingTime % 3600000;
+    var min = Math.floor( remainingTime / 60000);
+    remainingTime = remainingTime % 60000;
+    var s = Math.floor( remainingTime / 1000);
     h %= 24;
     min %= 60;
     s %= 60;
-
     h = (h<10) ? "0" + h : h;
     min = (min<10) ? "0" + min : min;
     s = (s<10) ? "0" + s : s;
-
     document.getElementById("days").textContent = d;
-    document.getElementById("days").innerText = d;
     document.getElementById("hours").textContent = h
     document.getElementById("minutes").textContent = min;
     document.getElementById("seconds").textContent = s;
-
-    setTimeout("countdown()", 1000);
 }
-countdown();
+setInterval("countdown()", 1000);

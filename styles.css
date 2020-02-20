@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     overflow-x: hidden;
 }
@@ -709,10 +712,28 @@ NEEEDS JAVASCRIPT!!!!!
 footer{
     height: 60vh;
     width: 100%;
-    background-image: url(./imgs/background-1@2x.png);
-    background-size: contain;
-    background-repeat: repeat;
-}/*
+    /* background-size: cover;
+    background-repeat: repeat; */
+    /* background-image: url(./imgs/background-1@2x.png); */
+    
+}
 .footer-container{
-    margin: 5em var(--container-margin) 0 var(--container-margin);
-} */
+    margin: 0 var(--container-margin);
+}
+.top-footer{
+    margin-top: 5em;
+}
+.logo-div-footer{
+    width: 40%;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+#footer-logo{
+    width: 25.5%;
+    height: 25.5%;
+}
+#footer-logo img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+}
