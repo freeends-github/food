@@ -1,37 +1,3 @@
-// var sliderContent = document.getElementById('client-photo--div');
-
-// var image = ['girl', 'ham', 'burger'];
-// var i = image.length;
-
-// function nextImage(){
-//     if (i > image.length){
-//         i = i + 1;
-//     } else{
-//         i = 1;
-//     }
-//         sliderContent.innerHTML = "<img src=" + [i-1] + ".png> "
-// }
-
-//======================================================================
-// var i = 0;
-// var images = [];
-// var time = 5000;
-
-// images[0] = './imgs/beautiful-young-healthy-woman-holds-tasty-big-burger-with-beef-cutlet-concept-nourishing-food_152625-788@2x.png';
-// images[1] = './imgs/ham';
-// images[2] = '.imgs/burger';
-
-// function changeImg(){
-//     document.slide.src = images[i];
-    
-//     if(i < images.length - 1){
-//         i++;
-//     } else{
-//         i = 0;
-//     }
-//     setTimeout("changeImg()", time);
-// }
-
 mybutton = document.getElementById('bott-button');
 function goAwayButton(){
     // document.body.scrollTop = 0; // For Safari
@@ -63,3 +29,57 @@ function countdown(){
     document.getElementById("seconds").textContent = s;
 }
 setInterval("countdown()", 1000);
+
+// Shop Logic
+
+// Getting variables
+let cartBtns = document.querySelectorAll(".addToCart-value button")
+let cartNr = document.querySelector(".quantity");
+let added = document.querySelector(".added");
+let articles = document.querySelectorAll(".articles");
+
+// Setting up the counter
+cartNr.style.display = "none";
+let count = 0;
+
+// Helping functions
+function addToCart(button) {
+    count++;
+    cartNr.style.display = "flex";
+    cartNr.textContent = count;
+    added.style.display = "block";
+    button.style.display = "none";
+}
+let list = document.querySelector(".shopping-items");
+function sendInfo(infos) {
+    let item = document.createElement("div");
+    let title = document.createElement("h3");
+    // let desc = document.createElement("p");
+    let titleText = document.createTextNode(infos.name);
+    // let descText = document.createTextNode(infos.desc);
+    title.appendChild(titleText);
+    // desc.appendChild(descText);
+    item.appendChild(title);
+    // item.appendChild(desc);
+    list.appendChild(item);
+}
+
+// Listening for clicks
+articles.forEach(article => {
+    articleInfo = {
+        "name": article.querySelector("h3").textContent,
+        // "desc": article.querySelector(".desc").textContent
+    }
+    let btn = article.querySelector("button");
+    btn.addEventListener("click", () => {
+        addToCart(btn);
+        sendInfo(articleInfo);
+    });
+})
+
+// Displaying shopping items
+let cartt = document.querySelector(".cartt");
+cartt.addEventListener("click", () => {
+    list.style.display = "block";
+    alert("test");
+});

@@ -90,6 +90,17 @@ nav ul{
     padding-left: 3em;
     justify-content: start;
 }
+.shopping-items {
+    width: 100%;
+    padding: 10px;
+    display: none;
+    background-color: var(--ketchup-color);
+    width: 40%;
+    height: 100%;
+    padding-left: 3em;
+    justify-content: start;
+}
+
 .dir #li-active{
     border-top: 1.5em var(--mayonnaise-color) solid;
 }
@@ -100,6 +111,26 @@ nav ul{
     display: inline-flex;
     height: 1.7em;
 }
+.cart-li {
+    position: relative;
+}
+.quantity {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color:var(--mayonnaise-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+}
+   
 /* NEEEDS HOVER */
 /* .interactive .cart{
     position: relative;
@@ -164,11 +195,11 @@ NEEEDS JAVASCRIPT!!!!!
     height: 2.2em;
     width: fit-content;
 }
-.span-path:hover{
+/*.span-path img:hover{
     height: 2.25em;
     width: fit-content;
     cursor: pointer;
-} /* ????? */
+} ????? */
 .span-path img{
     display: inline-block;
     height: 100%;
@@ -177,7 +208,7 @@ NEEEDS JAVASCRIPT!!!!!
 .go-right{
     width: 50%;
     display:flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
 }
 .order-now{
@@ -436,21 +467,25 @@ NEEEDS JAVASCRIPT!!!!!
     margin-top: 1em;
 }
 
-.addToCart-value button{
+.addToCart-value button {
     background-color: var(--mayonnaise-color);
     color: #fff;
     padding: 0.5em 2em;
     border-radius: 90em;
     border: none;
 }
+.added {
+    display: none;
+    color: #000;
+}
 .addToCart-value button:hover{
     cursor: pointer;
 }
-.addToCart-value button img{
+.addToCart-value button img {
     width: 0.8em;
     height: auto;
 }
-.addToCart-value button p{
+.addToCart-value button p {
     display: inline-block;
     font-size: 0.8em;
     font-weight: 100;
@@ -710,7 +745,7 @@ NEEEDS JAVASCRIPT!!!!!
 }
 
 footer{
-    height: 60vh;
+    /* height: 60vh; */
     width: 100%;
     /* background-size: cover;
     background-repeat: repeat; */
@@ -722,18 +757,84 @@ footer{
 }
 .top-footer{
     margin-top: 5em;
+    display: flex; 
 }
 .logo-div-footer{
-    width: 40%;
-    font-size: 0.8em;
+    width: 37%;
+    font-size: 0.9em;
     font-weight: normal;
+    line-height: 1.7;
+    margin-right: auto;
 }
 #footer-logo{
     width: 25.5%;
-    height: 25.5%;
+    height: fit-content;
 }
 #footer-logo img{
     width: 100%;
     height: auto;
     margin-bottom: 2em;
+}
+.pay-per-eat{
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(6, 3em);
+    grid-template-rows: 1.5em 1.5em; 
+    grid-column-gap: .5em;
+}
+.pay-per-eat img{
+    width: 100%;
+    height: auto;
+}
+.useful-links{
+    width: 35%;
+}
+.useful-links h3{
+    color: var(--ketchup-color);
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 2;
+}
+.useful-links hr{
+    width: 10%;
+    margin: 0.3em 0;
+    color: var(--mayonnaise-color);
+    background-color: var(--mayonnaise-color);
+    border: none;
+    height: 0.15em;
+}
+.useful-links--ul{
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: 11.7em 11.7em;
+}
+.useful-links--ul li a{
+    line-height: 2.15;
+    color: #686868;
+}
+.instagram-feed{
+    width: 25%;
+}
+.feed-photos{
+    display: grid;
+    grid-template-columns: 5em 5em 5em;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1.2em;
+    margin-top: 2.5em;
+}
+.feed-photos li img{
+    width: 100%;
+    height: 100%;
+}
+
+.bott-footer{
+    margin-top: 3em;
+    font-weight: normal;
+    color: #686868;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid rgba(112,112,112,0.2) .1em;
 }
