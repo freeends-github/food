@@ -1,7 +1,7 @@
 :root{
     --ketchup-color: #A80E0E;
     --mayonnaise-color: #FFAA00;
-    --container-margin: 12.6em;
+    --container-margin: 12.6%;
 }
 *{
     box-sizing: border-box;
@@ -27,14 +27,16 @@ header{
     display: inline-block;
     width: fit-content;
     height: 10em;
+    margin: 2em 0em 0em var(--container-margin);
 }
 #header-logo img{
-    margin: 2em 0em 0em var(--container-margin);
-    width: 11em;
+    
+    width: 41.4%;
 }
 .top-header{
     display: flex;
     justify-content: space-between;
+    align-items: center; /* just on responsive page !!!!!!!!!!*/
 }
 li{
     list-style: none;
@@ -42,37 +44,38 @@ li{
 a{
     text-decoration: none;
 }
-/* nav a{color: #fff;} */
-nav{
-    display: flex;
+
+nav.main-nav{
+    /* display: flex; */
+    display: none; /* just on responsive page !!!!!!!!!!!!!!!*/
     align-items: center;
-    width: 56em;
-    height: 5.5em;
-    
+    width: 56%;
+    height: 5.5em;  
 }
-nav ul{
+nav.mobile-nav{
+    display: none;
+}
+nav.main-nav ul{
     display: flex;
     /* justify-content: space-evenly; */
     align-items: center;
 }
-/* nav ul li{
-    height: 100%;
-} */
+
 .dir{
     display: flex;
     /*align-items: center;*/
     justify-content: space-around;
     height: 100%;
     width: 60%;
-    background-color: #393032; /*different color*/
-    opacity: 60%;
-    padding: 0 2em 0 2.5em;
+    background-color: rgba(40, 25, 35, 0.39);
+    padding: 0 2% 0 2.5%;
 }
-.dir li{
+.dir li, .mobile-dir li{
     display: flex;
     align-items: center;
+    height: 100%;
 }
-.dir a{
+.dir a, .mobile-dir a{
     display: inline-flex;
     padding: 0 1em 0 0.5em;
     font-size: 0.9em;
@@ -83,12 +86,12 @@ nav ul{
 /* .dir .active{
     border-top: 1.5em var(--mayonnaise-color) solid;
 } */
-.interactive{
+.interactive, .mobile-interactive{
     background-color: var(--ketchup-color);
     width: 40%;
     height: 100%;
     padding-left: 3em;
-    justify-content: start;
+     justify-content: flex-start;
 }
 .shopping-items {
     width: 100%;
@@ -102,12 +105,22 @@ nav ul{
 }
 
 .dir #li-active{
-    border-top: 1.5em var(--mayonnaise-color) solid;
+    /* border-top: 1.5em var(--mayonnaise-color) solid; */
+    position: relative;
+}
+div.active{
+    background-color: var(--mayonnaise-color);
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 25%;
+    
 }
 .interactive li{
     padding-right: 3em;
 }
-.interactive li img{
+.interactive img{
     display: inline-flex;
     height: 1.7em;
 }
@@ -117,19 +130,77 @@ nav ul{
 .quantity {
     position: absolute;
     top: -50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
+    right: -50%;
+    width: 1.5em;
+    height: 1.5em;
     background-color:var(--mayonnaise-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-content: center;
+    /* align-content: center; */
     align-items: center;
-    color:black;
-    font-size: 18px;
-    font-weight: bold;
+    color: var(--ketchup-color);
+    font-size: 0.8em;
+    font-weight: normal;
+    padding: 0.2em;
 }
+.cartt{
+    background: transparent;
+    border: none;
+    height: 100%;
+}
+.toggle-button{
+    display: block;
+    width: 5%;
+    height: 20%;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(40, 25, 35, 0.39);
+    border-radius: 2px;
+    margin-right: var(--container-margin);
+}
+.toggle-button_bar{
+    width: 80%;
+    background-color: #fff;
+    height: 0.2rem;
+    display: block;
+}
+span.mayonnaise, span.ketchup, span.sallate-biber, span.buka-nalt, span.pleskavica, span.buka-posht{
+    margin: 0.1rem auto;
+    border-radius: 50em;
+}
+
+.toggle-button_bar hr{
+    /* border-radius: 50%; */
+    /* background-color: white; */
+    border: none;
+}
+span.buka-nalt{
+    background-color: rgb(224, 152, 80);
+    height: 0.60rem;
+    border-radius: 4px 4px 0 0;
+}
+span.mayonnaise{
+    background-color: var(--mayonnaise-color);
+}
+span.ketchup{
+    background-color: var(--ketchup-color);
+}
+span.pleskavica{
+    background-color: rgb(95, 19, 19);
+    height: 0.4em;
+}
+span.sallate-biber{
+    background-color: rgb(0, 120, 0);
+}
+span.buka-posht{
+    background-color: rgb(224, 152, 80);
+    height: 0.45rem;
+    border-radius: 0 0 50% 50%;
+}
+/* .cartt img{
+    height: 100%
+} */
    
 /* NEEEDS HOVER */
 /* .interactive .cart{
@@ -172,16 +243,24 @@ NEEEDS JAVASCRIPT!!!!!
     margin-bottom: .5em
 }
 .main--mid-header h2{
-    position: relative;
+    /* position: relative; */
     width: 50%;
+    height: 5em;
+    background-image: url(./imgs/HighlightM2x.png);
+    /* background-blend-mode: overlay; */
+    background-position: center;
+    background-size: cover
+    background-repeat: no-repeat;
     font-size: 1.6em;
     margin-bottom: 2em;
+    
     /* margin-left: 3em; */
 } 
+
 .actions{
     margin-left: 10.5em;
 }
-.highlighterM{
+/* .highlighterM{
     display: inline-block;
     width: 40em;
     height: auto;
@@ -190,7 +269,7 @@ NEEEDS JAVASCRIPT!!!!!
     position: absolute;
     z-index: -1; 
     transform: rotateX(3deg);
-}
+} */
 .span-path{
     height: 2.2em;
     width: fit-content;
@@ -335,6 +414,7 @@ NEEEDS JAVASCRIPT!!!!!
     color: black;
     font-size: 0.9em ;
     margin-top: 1em;
+
 }
 /* .our-food li a{
     text-align: center;
@@ -370,7 +450,8 @@ NEEEDS JAVASCRIPT!!!!!
 .pizza-man{
     position: absolute;
     bottom: 0;
-    width: 35%;
+    width: auto;
+    height: 90%;
     margin-left: 7em;
 
 }
@@ -587,6 +668,8 @@ NEEEDS JAVASCRIPT!!!!!
 }
 .client{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 #client-photo--div{
     width: 47%;
@@ -607,6 +690,9 @@ NEEEDS JAVASCRIPT!!!!!
     bottom: -3em;
     left: -6em;
     border-radius: .5em;
+}
+.clients-quote{
+    width: 47%;
 }
  .about-us{
     background-color: var(--mayonnaise-color);
@@ -778,6 +864,7 @@ footer{
 .pay-per-eat{
     margin-top: 1.5em;
     display: grid;
+    vertical-align: middle;
     grid-template-columns: repeat(6, 3em);
     grid-template-rows: 1.5em 1.5em; 
     grid-column-gap: .5em;
@@ -837,4 +924,7 @@ footer{
     justify-content: center;
     align-items: center;
     border-top: solid rgba(112,112,112,0.2) .1em;
+}
+@media only screen and (max-width: 320px){
+
 }

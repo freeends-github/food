@@ -6,7 +6,7 @@ function goAwayButton(){
 
 function countdown(){
     var now = new Date();
-    var eventDate = new Date(2020, 02, 18);
+    var eventDate = new Date(2020, 01, 30);
     var currentTime = now.getTime();
     var eventTime = eventDate.getTime();
     var remainingTime = eventTime - currentTime;

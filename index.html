@@ -16,9 +16,12 @@
     <header>
         <div class="top-header">
             <div id="header-logo"><img src="./imgs/HeaderLogo2x.png" alt="logo"></div>
-            <nav>
+            <nav class="main-nav">
                 <ul class="dir">
-                    <li id="li-active"><a href="./index.html" class="active">Home</a></li>
+                    <li id="li-active">
+                        <a href="./index.html">Home</a>
+                        <div class="active"></div>
+                    </li>
                     <li><a href="#">Menu</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Testiminials</a></li>
@@ -35,16 +38,43 @@
                     </div>
                 </ul>
             </nav>
+            <button class="toggle-button">
+                <span class="toggle-button_bar buka-nalt"><hr></span>
+                <span class="toggle-button_bar mayonnaise"><hr></span>
+                <span class="toggle-button_bar ketchup"><hr></span>
+                <span class="toggle-button_bar pleskavica"><hr></span>
+                <span class="toggle-button_bar sallate-biber"><hr></span>
+                <span class="toggle-button_bar buka-posht"><hr></span>
+            </button>
         </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-dir">
+                <li>
+                    <a href="./index.html">Home</a>
+                <!-- <div class="active"></div> -->
+                </li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Testiminials</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="mobile-interactive">
+                <li><img src="./imgs/search2x.png" alt="search"></li>
+                <li><img src="./imgs/profile2x.png" alt="user"></li>
+                <li class="cart-li"><button class="cartt"><img src="./imgs/bag2x.png" class="cart" alt="shop"></button>
+                    <div class="quantity">1</div>
+                </li>
+                <div class="mobile-shopping-items">    
+                </div>
+            </ul>
+        </nav>
         <div class="mid-header">
             <span class="span-path"><img src="./imgs/pathL2x.png" alt="switch"></span>
             <div class="main--mid-header">
                 <div class="actions">
                     <h1>Party Time!</h1>
-                <!-- <div class="text--highlighter"> -->
                     <h2>Buy any 2 burgers and get 1.5L Pepsi Free</h2></div>
-                    <img src="./imgs/HighlightM2x.png" class="highlighterM" alt="highlighter">
-                <!-- </div> -->
+                    <!-- <img src="./imgs/HighlightM2x.png" class="highlighterM" alt="highlighter"> -->
                 <a href="#" class="order-now"><p>order now</p>
                 <span><img src="./imgs/ArrowR2x.png" alt="arrow-right"></span></a>
             </div>
@@ -285,8 +315,14 @@
                     <img name="slide" src="./imgs/girl.png" alt="beautiful-hamburger">
                     <div></div>
                 </div>
-                <!-- <div class=""></div> -->
+                <div class="clients-quote">
+                    <img src="./imgs/quotes.png" alt="">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <h3>Nina Margaret</h3><span><hr></span>
+                    <p>CEO, Abc Company</p>
+                </div>
             </article>
+           
         </section>
         <section class="about-us">
                 <img src="./imgs/general.png" alt="liner">
