@@ -713,16 +713,20 @@ div.active{
     justify-content: space-between;
 }
 #client-photo--div{
-    width: 47%;
-    height: fit-content;
+    width: 34em;
+    height: 33em;
     position: relative; 
 }
-#client-photo--div img{
+#client-photo--div .clientPhoto{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 0.5em;
+    background-image: url(./imgs/girl.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-#client-photo--div div{
+#client-photo--div #redback{
     position: absolute;
     background-color: var(--ketchup-color);
     width: 55%;
@@ -765,6 +769,15 @@ div.active{
 }
 .clients-quote h3{
     display: inline-block;
+}
+.slideDir{
+    background-color: #B7B5B5;
+    width: 0.6rem;
+    height: 0.45rem;
+    display: inline-block;
+    border-radius: 90rem;
+    margin: 2rem 0.5rem 0 0;
+    cursor: pointer;
 }
  .about-us{
     background-color: var(--mayonnaise-color);

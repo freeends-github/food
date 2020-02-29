@@ -6,7 +6,7 @@ function goAwayButton(){
 
 function countdown(){
     var now = new Date();
-    var eventDate = new Date(2020, 01, 30);
+    var eventDate = new Date(2020, 02, 18);
     var currentTime = now.getTime();
     var eventTime = eventDate.getTime();
     var remainingTime = eventTime - currentTime;
@@ -24,7 +24,7 @@ function countdown(){
     min = (min<10) ? "0" + min : min;
     s = (s<10) ? "0" + s : s;
     document.getElementById("days").textContent = d;
-    document.getElementById("hours").textContent = h
+    document.getElementById("hours").textContent = h;
     document.getElementById("minutes").textContent = min;
     document.getElementById("seconds").textContent = s;
 }
@@ -118,10 +118,7 @@ let aroowRight = document.querySelector("#arrowRight");
 let current = 0;
 
 function reset(){
-    // for(let i = 0; i < sliderImage.length; i++){
-        header.style.background = "none";
-        // sliderImage[i].style.display = "none";
-    //}
+    header.style.background = "none";
 }
 
 function startSlide(){
@@ -155,6 +152,24 @@ arrowRight.addEventListener("click", function(){
     slideRight();
 })
 startSlide();
+
+//testimonials
+
+// let clientArticle = document.querySelector("#client");
+// let dot = document.querySelector(".slideDir");
+// let clientQuote = document.querySelector("#clientQuote");
+// let clientName = document.querySelector("#clientName");
+// let clientJob = document.querySelector("#clientJob");
+// let currentSlide = 0;
+
+//
+
+
+
+
+
+
+
 
 
 //map
