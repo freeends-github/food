@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="styles.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700|Poppins:400,600|Source+Sans+Pro:300,400,600&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700|Poppins:400,600|Source+Sans+Pro:300,400,600&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="map.json"> -->
 </head>
 <body>
-    <header>
+    <header id="header">
+        <!-- <img src="./imgs/headerBg2x.png" class="slide triple-burgers"  alt="burgers">
+        <img src="./imgs/hamburger-background.jpg" class="slide bandb" alt="burger and beer">
+        <img src="./imgs/corona-background.jpg" class="slide corona" alt="coronas"> -->
         <div class="top-header">
             <div id="header-logo"><img src="./imgs/HeaderLogo2x.png" alt="logo"></div>
             <nav class="main-nav">
@@ -28,57 +32,45 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
                 <ul class="interactive">
-                    <li><img src="./imgs/search2x.png" alt="search"></li>
-                    <li><img src="./imgs/profile2x.png" alt="user"></li>
+                    <li><img src="./imgs/search2x.png" class="searchInput" alt="search"></li>
+                    <li><img src="./imgs/profile2x.png" class="user" alt="user"></li>
                     <li class="cart-li"><button class="cartt"><img src="./imgs/bag2x.png" class="cart" alt="shop"></button>
                         <div class="quantity">1</div>
                     </li>
-                    <div class="shopping-items">
-                        
-                    </div>
+                    <input type="text" placeholder="Search..." class="search-input"> 
                 </ul>
+                <div class="user-div">
+                    <form action="">
+                        <button class="sign-up">Sign Up</button><button class="log-in">Log in</button><br>
+                        <h2>Sign Up for better ..</h2>
+                        <input type="text" id="username" name="username" placeholder="Username"><br>
+                        <input type="email" id="email" name="email" placeholder="Email Address"><br>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                        <button class="submit-user">Submit</button>
+                    </form>
+                </div>
+                <div class="shopping-items">    
+                </div>
             </nav>
             <button class="toggle-button">
-                <span class="toggle-button_bar buka-nalt"><hr></span>
-                <span class="toggle-button_bar mayonnaise"><hr></span>
-                <span class="toggle-button_bar ketchup"><hr></span>
-                <span class="toggle-button_bar pleskavica"><hr></span>
-                <span class="toggle-button_bar sallate-biber"><hr></span>
-                <span class="toggle-button_bar buka-posht"><hr></span>
+                <img src="./imgs/hamburger-svg-vector-3.png" alt="burgermenu">
             </button>
         </div>
-        <nav class="mobile-nav">
-            <ul class="mobile-dir">
-                <li>
-                    <a href="./index.html">Home</a>
-                <!-- <div class="active"></div> -->
-                </li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Testiminials</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <ul class="mobile-interactive">
-                <li><img src="./imgs/search2x.png" alt="search"></li>
-                <li><img src="./imgs/profile2x.png" alt="user"></li>
-                <li class="cart-li"><button class="cartt"><img src="./imgs/bag2x.png" class="cart" alt="shop"></button>
-                    <div class="quantity">1</div>
-                </li>
-                <div class="mobile-shopping-items">    
-                </div>
-            </ul>
-        </nav>
         <div class="mid-header">
-            <span class="span-path"><img src="./imgs/pathL2x.png" alt="switch"></span>
+            <span class="span-path" ><img src="./imgs/pathL2x.png" id="arrowLeft" alt="switch"></span>
             <div class="main--mid-header">
                 <div class="actions">
                     <h1>Party Time!</h1>
-                    <h2>Buy any 2 burgers and get 1.5L Pepsi Free</h2></div>
+                    <div>
+                        <h2>Buy any 2 burgers and</h2>
+                        <h2>get 1.5L Pepsi Free</h2>
+                    </div>
+                </div>
                     <!-- <img src="./imgs/HighlightM2x.png" class="highlighterM" alt="highlighter"> -->
                 <a href="#" class="order-now"><p>order now</p>
                 <span><img src="./imgs/ArrowR2x.png" alt="arrow-right"></span></a>
             </div>
-            <span class="span-path go-right"><img src="./imgs/pathR2x.png" alt="switch"></span>
+            <span  class="span-path go-right"><img src="./imgs/pathR2x.png" id="arrowRight" alt="switch"></span>
         </div>
         <div class="bott-header">
             <img onclick="goAwayButton()" id="bott-button" src="./imgs/pathB2x.png" alt="gp">
@@ -137,10 +129,12 @@
             <!--<div class="delivery-guy">--><img src="./imgs/pizzaman2x.png" class="pizza-man" alt="pizzaman"><!--</div>-->
             <article class="delivery-info">
                 <div class="text-highlighter">
-                    <h2>we guarantee 30 minutes delivery</h2>
-                    <img src="./imgs/HighlightK2x.png" class="highlighterK" alt="highlighter">
+                    <h2>we guarantee</h2>
+                    <h2>30 minutes delivery</h2>
+                    <!-- <img src="./imgs/HighlightK2x.png" class="highlighterK" alt="highlighter"> -->
                 </div>
-                <p>If you’re having a meeting, working late at night and need an extra push.</p>
+                <p>If you’re having a meeting, working late at</p>
+                <p>night and need an extra push.</p>
             </article>
             <img src="./imgs/third.png" class="liner3" alt="liner">
         </section>
@@ -157,7 +151,6 @@
                 <div class="articles">
                     <div class="article-photo">
                         <img src="./imgs/1@2x.png" alt="hamburger">
-                        <img src="./imgs/third.png" class="recipe-liner" alt="liner">
                     </div>
                     <div class="article-description">
                         <img src="./imgs/star.png" alt="star">
@@ -179,7 +172,7 @@
                 <div class="articles">
                     <div class="article-photo">
                         <img src="./imgs/2shutterstock_136631573@2x.png" alt="hamburger me sallate">
-                        <img src="./imgs/third.png" class="recipe-liner" alt="">
+                         
                     </div>
                     <div class="article-description">
                         <img src="./imgs/star.png" alt="star">
@@ -198,7 +191,7 @@
                 <div class="articles">
                     <div class="article-photo">
                         <img src="./imgs/3background-burgers-home-top@2x.png" alt="">
-                        <img src="./imgs/third.png" class="recipe-liner" alt="">
+                         
                     </div>
                     <div class="article-description">
                         <img src="./imgs/star.png" alt="star">
@@ -217,7 +210,7 @@
                 <div class="articles">
                     <div class="article-photo">
                         <img src="./imgs/4news_image1-min@2x.png" alt="">
-                        <img src="./imgs/third.png" class="recipe-liner" alt="">
+                        
                     </div>
                     <div class="article-description">
                         <img src="./imgs/star.png" alt="star">
@@ -236,7 +229,7 @@
                 <div class="articles">
                     <div class="article-photo">
                         <img src="./imgs/5news_image2-min@2x.png" alt="">
-                        <img src="./imgs/third.png" class="recipe-liner" alt="">
+                        
                     </div>
                     <div class="article-description">
                         <img src="./imgs/star.png" alt="star">
@@ -318,7 +311,7 @@
                 <div class="clients-quote">
                     <img src="./imgs/quotes.png" alt="">
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    <h3>Nina Margaret</h3><span><hr></span>
+                    <div><h3>Nina Margaret</h3><hr></div>
                     <p>CEO, Abc Company</p>
                 </div>
             </article>

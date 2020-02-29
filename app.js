@@ -64,6 +64,15 @@ function sendInfo(infos) {
     list.appendChild(item);
 }
 
+
+// toggle button
+// Displaying the nav after clicking the toggle button
+let toggleButton = document.querySelector(".toggle-button");
+let navigationBar = document.querySelector(".main-nav");
+toggleButton.addEventListener("click", () => {
+    navigationBar.style.display = "block"
+}
+)
 // Listening for clicks
 articles.forEach(article => {
     articleInfo = {
@@ -83,3 +92,69 @@ cartt.addEventListener("click", () => {
     list.style.display = "block";
     alert("test");
 });
+
+//Displaying search input
+let searchInput = document.querySelector(".searchInput");
+let searchInputText = document.querySelector(".search-input");
+searchInput.addEventListener("click", () => {
+    searchInputText.style.display = "inline-block";
+})
+
+// Account
+let userDiv = document.querySelector(".user-div");
+let acc = document.querySelector(".user");
+acc.addEventListener("click", () => {
+    userDiv.style.display = "flex"
+})
+
+//header slider
+let header = document.querySelector("#header");
+var sliderImage = ["url(./imgs/headerBg2x.png)", "url(./imgs/hamburger-and-fries-beside-mug-with-beer-3356408.jpg)", "url(./imgs/corona-background.jpg)"];
+// let tripleBurgers = sliderImage[0];
+// let burgerBeer = sliderImage[1];
+// let coronaBeers = sliderImage[2];
+let arrowLeft = document.querySelector("#arrowLeft");
+let aroowRight = document.querySelector("#arrowRight");
+let current = 0;
+
+function reset(){
+    // for(let i = 0; i < sliderImage.length; i++){
+        header.style.background = "none";
+        // sliderImage[i].style.display = "none";
+    //}
+}
+
+function startSlide(){
+    reset();
+    header.style.background ="center / cover no-repeat " + sliderImage[0];
+}
+
+function slideLeft(){
+    reset();
+    header.style.background ="center / cover no-repeat " + sliderImage[current - 1];
+    current--;
+}
+
+function slideRight(){
+    reset();
+    header.style.background ="center / cover no-repeat " + sliderImage[current + 1];
+    current++;
+}
+
+arrowLeft.addEventListener("click", function(){
+    if(current === 0){
+        current = sliderImage.length;
+    }
+    slideLeft();
+})
+
+arrowRight.addEventListener("click", function(){
+    if(current === sliderImage.length - 1){
+        current = -1;
+    }
+    slideRight();
+})
+startSlide();
+
+
+//map
