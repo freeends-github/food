@@ -4,33 +4,77 @@ function goAwayButton(){
     window.scrollTo(0,800) = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function countdown(){
-    var now = new Date();
-    var eventDate = new Date(2020, 02, 18);
-    var currentTime = now.getTime();
-    var eventTime = eventDate.getTime();
-    var remainingTime = eventTime - currentTime;
-    var d = Math.floor( remainingTime / 86400000);
-    remainingTime = remainingTime % 86400000;
-    var h = Math.floor( remainingTime / 3600000);
-    remainingTime = remainingTime % 3600000;
-    var min = Math.floor( remainingTime / 60000);
-    remainingTime = remainingTime % 60000;
-    var s = Math.floor( remainingTime / 1000);
-    h %= 24;
-    min %= 60;
-    s %= 60;
-    h = (h<10) ? "0" + h : h;
-    min = (min<10) ? "0" + min : min;
-    s = (s<10) ? "0" + s : s;
-    document.getElementById("days").textContent = d;
-    document.getElementById("hours").textContent = h;
-    document.getElementById("minutes").textContent = min;
-    document.getElementById("seconds").textContent = s;
-}
-setInterval("countdown()", 1000);
 
-// Shop Logic
+// --- chatGPT time ...
+function checkHappyHours() {
+    // get current date and time
+    const now = new Date();
+    // check if today is Friday and if so, if it's after 5pm but before 8pm
+    if (now.getDay() === 5 && now.getHours() >= 17 && now.getHours() < 20) {
+      // if it's during happy hours, hide the element with id "happy-hours"
+        const happyHoursElement = document.getElementById("happy-hours");
+        if (happyHoursElement) {
+            happyHoursElement.style.visibility = "hidden"
+        } else {
+            happyHoursElement.style.visibility = "visible"
+        }
+    }
+}
+
+function getNextFridayHappyHours() {
+    // get current date and time
+    const now = new Date();
+    // get current day of week (0 is Sunday, 6 is Saturday)
+    const currentDay = now.getDay();
+    // check if today is Friday and if so, if it's after 8pm
+    if (currentDay === 5 && now.getHours() >= 20) {
+        // if it's after 8pm on a Friday, calculate days until next Friday
+        const daysUntilFriday = (5 - currentDay + 7) % 7;
+        // create datetime object for next Friday at 5pm
+        const nextFriday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysUntilFriday, 17, 0, 0);
+        // calculate difference in milliseconds between now and next Friday at 5pm
+        const timeDiff = nextFriday.getTime() - now.getTime();
+        // calculate difference in hours between now and next Friday at 5pm
+        const hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+        // calculate difference in minutes between now and next Friday at 5pm
+        const minutesDiff = Math.floor((timeDiff / (1000 * 60)) % 60);
+        // calculate difference in seconds between now and next Friday at 5pm
+        const secondsDiff = Math.floor((timeDiff / 1000) % 60);
+        // return formatted string with time until next Friday at 5pm
+        return `${daysUntilFriday} days, ${hoursDiff} hours, ${minutesDiff} minutes, and ${secondsDiff} seconds until next Friday's happy hours at 5pm`;
+    } else {
+        // if it's not after 8pm on a Friday, return a message indicating the next happy hour
+        const nextHappyHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0);
+        if (now.getDay() < 5) {
+            // if today is not Friday, set the date to the next Friday
+            nextHappyHour.setDate(now.getDate() + (5 - now.getDay()));
+        } else {
+            // if today is Friday, check if it's after 5pm and if so, set the date to the next Friday
+            if (now.getHours() >= 17) {
+            nextHappyHour.setDate(now.getDate() + 7);
+            }
+        }
+        // calculate difference in milliseconds between now and next happy hour
+        var timeDiff = nextHappyHour.getTime() - now.getTime();
+        // calculate difference in days between now and next happy hour
+        var dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        // calculate difference in hours between now and next happy hour
+        var hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+        // calculate difference in minutes between now and next happy hour
+        var minutesDiff = Math.floor((timeDiff / (1000 * 60)) % 60);
+        // calculate difference in seconds between now and next happy hour
+        var secondsDiff = Math.floor((timeDiff / 1000) % 60);
+        // return formatted string with time until next happy hour
+        
+        document.getElementById("days").textContent = dayDiff;
+        document.getElementById("hours").textContent = hoursDiff;
+        document.getElementById("minutes").textContent = minutesDiff;
+        document.getElementById("seconds").textContent = secondsDiff;
+    }
+}
+
+setInterval("getNextFridayHappyHours(), checkHappyHours()", 1000);
+// --- chatGPT time ... /end
 
 // Getting variables
 let cartBtns = document.querySelectorAll(".addToCart-value button")
